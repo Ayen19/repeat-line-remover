@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>submit-for-repeat removal</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <form id="document_submission" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="document">Upload Document</label>
+        <input type="file" id="text_file" name="text_file">
+
+        <input type="submit" value="upload">
+
+
+    </form>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

@@ -23,6 +23,12 @@ pip install -r requirements.txt
 python3 manage.py runserver
 ```
 
+- on http://127.0.0.1:8000/, the project should be running on localhost.
+
+## Running Migration
+
+- Not needed for this project
+
 ## Reporting issues
 
 - Please create an issue should you run into error, I would love know.

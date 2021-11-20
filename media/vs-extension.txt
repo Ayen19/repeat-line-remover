@@ -58,4 +58,15 @@ TabNine.tabnine-vscode
 twxs.cmake
 wix.glean
 wix.vscode-import-cost
+cschlosser.doxdocgen
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+esbenp.prettier-vscode
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+formulahendry.code-runner
+GitHub.vscode-pull-request-github
+hars.CppSnippets
+jeff-hykin.better-cpp-syntax
+JuanBlanco.solidity
 

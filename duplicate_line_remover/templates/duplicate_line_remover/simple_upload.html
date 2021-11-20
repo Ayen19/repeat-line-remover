@@ -1,12 +1,73 @@
-<form method="post" enctype="multipart/form-data">
-	{% csrf_token %}
-	<input type="file" name="myfile" />
-	<button type="submit">Upload</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text Processor</title>
+		<style>
+			body {
+				background-color: rgb(209, 209, 209);
+				font-family: Arial, Helvetica, sans-serif;
+				display: flex;
+				justify-content: center;
+				justify-items: center;
+				flex-direction: column;
+				margin: 0 auto;
+				width: 100%;
+			}
+			h1 {
+				margin: 1rem 2rem;
+			}
+			.file-upload-box {
+				background-color: white;
+				padding: 2rem 3rem;
+				margin: 0 2rem;
+			}
+			.visualize-text-diff {
+				display: flex;
+				justify-content: space-between;
+				margin: 0.5rem 2rem;
+			}
+			.unprocessed-text {
+				background-color: white;
+				width: 50%;
+				margin: 0.5rem 0rem 0.5rem 0rem;
+				padding: 0rem 1rem;
+				height: 70vh;
+			}
+			.processed-text {
+				background-color: white;
+				width: 50%;
+				margin: 0.5rem 0rem 0.5rem 0.5rem;
+				padding: 0rem 1rem;
+				height: 70vh;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Text Processor 1.0.0</h1>
+		<div class="file-upload-box">
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<input type="file" name="myfile" />
+				<button type="submit">Upload</button>
+			</form>
 
-{% if uploaded_file_url %}
-<p>
-	File uploaded at:
-	<a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a>
-</p>
-{% endif %}
+			{% if uploaded_file_url %}
+			<p>
+				File uploaded at:
+				<a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a>
+			</p>
+			{% endif %}
+		</div>
+		<div class="visualize-text-diff">
+			<div class="unprocessed-text">
+				<h3>Unprocessed Text</h3>
+			</div>
+			<div class="processed-text">
+				<h3>Processed Text</h3>
+			</div>
+		</div>
+	</body>
+</html>

@@ -15,11 +15,11 @@ def index(req):
 def uploadfile(req, res):
     if req.method == 'POST':
 
-        
+
         form = UploadFileForm(req.POST, req.FILES)
 
         return HttpResponse("THANK YOU!")
-    
+
 
 
 def simple_upload(request):
@@ -28,7 +28,10 @@ def simple_upload(request):
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        return render(request, 'core/simple_upload.html', {
+
+        context = {
+            'text_content':[],
             'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'core/simple_upload.html')
+        }
+        return render(request, 'duplicate_line_remover/simple_upload.html', context)
+    return render(request, 'duplicate_line_remover/simple_upload.html')
